@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="document">
+	<name>La mini-ferme de Nicolas</name>
+	<gx:CascadingStyle kml:id="__managed_style_0C6C07ED3D3E2758A6CC">
+		<styleUrl>https://earth.google.com/balloon_components/base/1.1.0.0/card_template.kml#main</styleUrl>
+		<Style>
+			<IconStyle>
+				<scale>0.9</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=388e3c&amp;id=2370&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>6</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1FCC110A373E2758A6CB">
+		<styleUrl>https://earth.google.com/balloon_components/base/1.1.0.0/card_template.kml#main</styleUrl>
+		<Style>
+			<IconStyle>
+				<scale>0.75</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=388e3c&amp;id=2370&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_03449C2D8A3E2758A6CB">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_1FCC110A373E2758A6CB</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_0C6C07ED3D3E2758A6CC</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="0FC38259933E2757D323">
+		<name>Arbre 1</name>
+		<description><![CDATA[<div>Fiche interactive : <a href="https://minifermedenicolas.github.io/mini-ferme-nicolas/arbre-1.html">https://minifermedenicolas.github.io/mini-ferme-nicolas/arbre-1.html</a><br></div>]]></description>
+		<LookAt>
+			<longitude>0.7251216354376355</longitude>
+			<latitude>44.84046561270337</latitude>
+			<altitude>103.644109062255</altitude>
+			<heading>344.0494622644943</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>25.00000184782948</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_03449C2D8A3E2758A6CB</styleUrl>
+		<Point>
+			<coordinates>0.7251214854425392,44.84045804495018,103.6076240224372</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0711ECF28E3E27599B3B">
+		<name>Arbre 2</name>
+		<description><![CDATA[<div>Fiche interactive : <a href="https://minifermedenicolas.github.io/mini-ferme-nicolas/arbre-1.html">https://minifermedenicolas.github.io/mini-ferme-nicolas/arbre-2.html</a><br></div>]]></description>
+		<LookAt>
+			<longitude>0.7252871540845041</longitude>
+			<latitude>44.84044957876669</latitude>
+			<altitude>103.6885002437731</altitude>
+			<heading>344.0497097102405</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>25.01392289344495</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_03449C2D8A3E2758A6CB</styleUrl>
+		<Point>
+			<coordinates>0.7252679667821771,44.84043019583239,103.6423988358056</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0506A19FD93E275A2BE1">
+		<name>Arbre 3</name>
+		<description><![CDATA[<div>Fiche interactive : <a href="https://minifermedenicolas.github.io/mini-ferme-nicolas/arbre-1.html">https://minifermedenicolas.github.io/mini-ferme-nicolas/arbre-3.html</a><br></div>]]></description>
+		<LookAt>
+			<longitude>0.7253053166304313</longitude>
+			<latitude>44.84053580382632</latitude>
+			<altitude>103.7551477971261</altitude>
+			<heading>344.0497074954725</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>35.26802313099779</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_03449C2D8A3E2758A6CB</styleUrl>
+		<Point>
+			<coordinates>0.7253002574088696,44.84053877266692,103.7702934090786</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>
