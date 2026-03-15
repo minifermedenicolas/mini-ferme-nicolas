@@ -2,34 +2,41 @@
 <html>
 
 <head>
-
 <meta charset="utf-8">
 <title>Carte de la Mini-Ferme de Nicolas</title>
 
 <style>
 
-html, body{
-margin:0;
-height:100%;
+body{
 font-family:Arial, sans-serif;
+text-align:center;
+background:#f2f2f2;
+margin:0;
+padding:40px;
 }
 
-#carte{
-height:100%;
-width:100%;
-border:none;
+h1{
+margin-bottom:30px;
 }
 
-.bouton-retour{
-position:absolute;
-top:15px;
-left:15px;
-background:white;
-padding:10px 15px;
-border-radius:8px;
+.bouton{
+display:inline-block;
+padding:20px 30px;
+font-size:20px;
+background:#4CAF50;
+color:white;
 text-decoration:none;
-font-weight:bold;
-box-shadow:0 2px 6px rgba(0,0,0,0.3);
+border-radius:10px;
+}
+
+.bouton:hover{
+background:#3e8e41;
+}
+
+.retour{
+display:block;
+margin-top:40px;
+font-size:16px;
 }
 
 </style>
@@ -38,12 +45,17 @@ box-shadow:0 2px 6px rgba(0,0,0,0.3);
 
 <body>
 
-<a class="bouton-retour" href="index.html">← Retour à l'accueil</a>
+<h1>Carte de la Mini-Ferme de Nicolas</h1>
 
-<iframe
-id="carte"
-src="https://earth.google.com/earth/d/1IFz5LOq_lxNP-0dzcnAM0kTar-ezKP8l?usp=sharing">
-</iframe>
+<p>Cliquez sur le bouton ci-dessous pour ouvrir la carte interactive dans Google Earth :</p>
+
+<a class="bouton" href="https://earth.google.com/earth/d/1IFz5LOq_lxNP-0dzcnAM0kTar-ezKP8l?usp=sharing" target="_blank">
+🌍 Ouvrir la carte Google Earth
+</a>
+
+<p class="retour">
+<a href="index.html">← Retour à l'accueil</a>
+</p>
 
 </body>
 
