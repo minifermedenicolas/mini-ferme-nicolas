@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Carte interactive de la mini-ferme</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <style>
-        #map { height: 600px; width: 100%; }
-    </style>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.4/leaflet-omnivore.min.js"></script>
+
+<meta charset="utf-8">
+<title>Carte de la Mini-Ferme de Nicolas</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<style>
+html, body {
+height:100%;
+margin:0;
+}
+
+#map {
+height:100%;
+width:100%;
+}
+</style>
+
 </head>
+
 <body>
 
-<h1>Carte interactive de la mini-ferme</h1>
-
 <div id="map"></div>
-<p><a href="index.html">Retour à l'accueil</a></p>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-omnivore/leaflet-omnivore.min.js"></script>
 
 <script>
-    // 1️⃣ Créer la carte
-    var map = L.map('map').setView([0, 0], 1); // vue initiale simple
 
-    // 2️⃣ Ajouter le fond (optionnel : image ou carte vide)
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
+// création de la carte
+var map = L.map('map');
 
-    // 3️⃣ Charger le KML avec omnivore
-    omnivore.kml('La mini-ferme de Nicolas.kml')
-        .on('ready', function() {
-            map.fitBounds(this.getBounds());
-        })
-        .addTo(map);
+// fond satellite (proche Google Earth)
+L.tileLayer(
+'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+{
+attribution: 'Tiles © Esri'
+}
+).addTo(map);
+
+// chargement du fichier KML
+var kmlLayer = omnivore.kml('La mini-ferme de Nicolas.kml')
+.on('ready', function() {
+map.fitBounds(this.getBounds());
+})
+.addTo(map);
+
 </script>
 
 </body>
