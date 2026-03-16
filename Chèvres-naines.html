@@ -2,83 +2,112 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Présentation générale des Chèvres Naines</title>
+<title>Présentation des Chèvres Naines</title>
+
 <style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #fdf8f0;
-  color: #333;
+
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#fdf8f0;
+color:#333;
 }
 
-header {
-  background: #8dc63f;
-  color: white;
-  padding: 20px;
-  text-align: center;
+header{
+background:#8dc63f;
+color:white;
+padding:20px;
+text-align:center;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2em;
+header h1{
+margin:0;
 }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
 }
 
-.section {
-  margin-bottom: 30px;
+.section{
+margin-bottom:40px;
 }
 
-.section h2 {
-  color: #8dc63f;
-  margin-bottom: 10px;
+.section h2{
+color:#8dc63f;
+border-bottom:2px solid #8dc63f;
+padding-bottom:5px;
+margin-bottom:15px;
 }
 
-.info-box {
-  background: #fffbe6;
-  padding: 15px;
-  border-left: 5px solid #8dc63f;
-  border-radius: 5px;
-  margin-bottom: 15px;
+.info-box{
+background:#fffbe6;
+padding:15px;
+border-left:5px solid #8dc63f;
+border-radius:5px;
+margin-bottom:20px;
 }
 
-.individus {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
-  gap: 2px;
-}
-}
-
-.individu img {
-  width: 20px;      /* largeur maximale de la vignette */
-  height: 20px;     /* hauteur maximale de la vignette */
-  object-fit: cover; /* recadrage pour remplir le carré */
-  border-radius: 10px;
-  margin-bottom: 10px;
-  border: 2px solid #8dc63f;
-}
+/* grille responsive */
+.groupe{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
+/* chaque chèvre */
+.chevre{
+text-align:center;
 }
 
-footer a {
-  color: #8dc63f;
-  text-decoration: none;
-  font-weight: bold;
+/* nom au dessus */
+.chevre h3{
+margin:0 0 5px 0;
+font-size:16px;
 }
 
-footer a:hover {
-  text-decoration: underline;
+/* image vignette */
+.chevre img{
+width:4cm;
+height:4cm;
+object-fit:cover;
+border-radius:10px;
+border:2px solid #8dc63f;
 }
+
+/* responsive smartphone */
+@media (max-width:600px){
+
+.chevre img{
+width:80px;
+height:80px;
+}
+
+.chevre h3{
+font-size:14px;
+}
+
+}
+
+footer{
+text-align:center;
+padding:20px;
+}
+
+footer a{
+color:#8dc63f;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer a:hover{
+text-decoration:underline;
+}
+
 </style>
 </head>
+
 <body>
 
 <header>
@@ -87,74 +116,108 @@ footer a:hover {
 
 <div class="container">
 
-  <div class="section info-box">
-    <h2>Présentation générale</h2>
-    <p>Les chèvres naines sont des animaux curieux et sociables, adaptés aux petits espaces et parfaits pour la mini-ferme. Elles sont robustes, faciles à entretenir et très attachantes. Chaque individu a son caractère et ses habitudes.</p>
-  </div>
-
-  <div class="section info-box">
-    <h2>Informations clés</h2>
-    <p>Race : Chèvre naine miniature<br>
-       Nombre d’individus : 7<br>
-       Alimentation : foin, herbe, légumes<br>
-       Boisson : eau fraîche disponible en permanence<br>
-       Vaccinations et soins : à jour</p>
-  </div>
-  
-<!-- Groupe Mâle -->
-  <div class="section">
-  <div class="group-title">Mâle</div>
-  <div class="individus" style="margin-bottom: 30px;">
-    <div class="individu">
-      <h3>Calimé</h3>
-      <img src="Calimé.jpg" alt="Calimé 1">
-    </div>
-  </div>
+<div class="info-box">
+<h2>Présentation générale</h2>
+<p>
+Les chèvres naines sont des animaux curieux, sociables et très attachants. 
+Elles vivent en groupe et possèdent chacune leur caractère. 
+Dans la mini-ferme de Nicolas, elles disposent de grands espaces pour pâturer 
+et d'un abri pour se protéger des intempéries.
+</p>
 </div>
-      
-  <!-- Groupe Femelle -->
-  <div class="section">
-  <div class="group-title">Femelle</div
-      <div class="individus">
-       <div class="individu">
-        <h3>Rhino</h3>
-        <img src="Rhino.jpg" alt="Rhino">        
-      </div>
-      <div class="individu">
-       <h3>Aspro</h3>
-       <img src="Aspro.jpg" alt="Aspro">
-      </div>
-      <div class="individu">
-        <h3>Oréo</h3>
-        <img src="Oréo.jpg" alt="Oréo">        
-      </div>
-      <div class="individu">
-        <h3>Bounty</h3>
-        <img src="Bounty.jpg" alt="Bounty">
-      </div>
-    
-     <!-- Groupe Bébé -->
-    <div class="section">
-  <div class="group-title">Bébé</div
-      <div class="individu">
-        <h3>Nutz</h3>
-        <img src="Nutz.jpg" alt="Nutz">
-        </div>
-      
-      <div class="individu">
-        <a href="Chèvre-naine-Réglisse.html">
-        <h3>Réglisse</h3>
-        <img src="Réglisse.jpg" alt="Réglisse">
-      </div>
-    </div>
-  </div>
+
+<div class="info-box">
+<h2>Informations clés</h2>
+<p>
+Race : Chèvre naine miniature<br>
+Nombre d’individus : 7<br>
+Alimentation : foin, herbe, végétaux<br>
+Eau fraîche disponible en permanence
+</p>
+</div>
+
+
+<!-- MALE -->
+
+<div class="section">
+
+<h2>Le mâle</h2>
+
+<div class="groupe">
+
+<div class="chevre">
+<h3>Calimé</h3>
+<img src="Calimé.jpg" alt="Calimé">
+</div>
+
+</div>
+</div>
+
+
+<!-- FEMELLES -->
+
+<div class="section">
+
+<h2>Les femelles</h2>
+
+<div class="groupe">
+
+<div class="chevre">
+<h3>Rhino</h3>
+<img src="Rhino.jpg" alt="Rhino">
+</div>
+
+<div class="chevre">
+<h3>Aspro</h3>
+<img src="Aspro.jpg" alt="Aspro">
+</div>
+
+<div class="chevre">
+<h3>Oréo</h3>
+<img src="Oréo.jpg" alt="Oréo">
+</div>
+
+<div class="chevre">
+<h3>Bounty</h3>
+<img src="Bounty.jpg" alt="Bounty">
+</div>
+
+</div>
+</div>
+
+
+<!-- BEBES -->
+
+<div class="section">
+
+<h2>Les bébés</h2>
+
+<div class="groupe">
+
+<div class="chevre">
+<h3>Nutz</h3>
+<img src="Nutz.jpg" alt="Nutz">
+</div>
+
+<div class="chevre">
+<a href="Chèvre-naine-Réglisse.html">
+<h3>Réglisse</h3>
+<img src="Réglisse.jpg" alt="Réglisse">
+</a>
+</div>
+
+</div>
+</div>
+
 
 </div>
 
 <footer>
+
 <a href="animaux.html">← Retour aux animaux</a> |
-<a href="index.html">← Retour à l'accueil</a> | 
-<a href="carte.html">Voir sur la carte 🌍</a>
+<a href="index.html">← Accueil</a> |
+<a href="carte.html">Voir la carte 🌍</a>
+
 </footer>
 
 </body>
