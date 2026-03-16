@@ -2,113 +2,227 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Chèvre Naine-Réglise</title>
+<title>Chèvre Naine - Réglisse</title>
+
 <style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #fdf8f0;
-  color: #333;
+
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#fdf8f0;
+color:#333;
 }
 
-header {
-  background: #8dc63f;
-  color: white;
-  padding: 20px;
-  text-align: center;
+header{
+background:#8dc63f;
+color:white;
+padding:20px;
+text-align:center;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2em;
+header h1{
+margin:0;
 }
 
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+/* structure générale */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
 }
 
-.image-section img {
-  width: 100%;
-  border-radius: 10px;
-  border: 3px solid #8dc63f;
+/* galerie photo */
+
+.image-section{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
 }
 
-.info-section {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.image-section img{
+width:100%;
+border-radius:10px;
+border:3px solid #8dc63f;
+cursor:pointer;
+transition:transform 0.2s;
 }
 
-.info-section h2 {
-  color: #8dc63f;
-  margin-bottom: 5px;
+.image-section img:hover{
+transform:scale(1.05);
 }
 
-.info-box {
-  background: #fffbe6;
-  padding: 15px;
-  border-left: 5px solid #8dc63f;
-  border-radius: 5px;
+/* section informations */
+
+.info-section{
+display:flex;
+flex-direction:column;
+gap:15px;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
+.info-section h2{
+color:#8dc63f;
+margin-bottom:5px;
 }
 
-footer a {
-  color: #8dc63f;
-  text-decoration: none;
-  font-weight: bold;
+.info-box{
+background:#fffbe6;
+padding:15px;
+border-left:5px solid #8dc63f;
+border-radius:5px;
 }
 
-footer a:hover {
-  text-decoration: underline;
+/* image plein écran */
+
+.lightbox{
+display:none;
+position:fixed;
+z-index:1000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
 }
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+/* responsive tablette */
+
+@media (max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+}
+
+/* responsive smartphone */
+
+@media (max-width:600px){
+
+.image-section{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* footer */
+
+footer{
+text-align:center;
+padding:20px;
+}
+
+footer a{
+color:#8dc63f;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer a:hover{
+text-decoration:underline;
+}
+
 </style>
+
 </head>
+
 <body>
 
 <header>
 <h1>Réglisse - Chèvre Naine</h1>
 </header>
 
+
 <div class="container">
-  <div class="image-section">
-    <img src="Réglisse.jpg" alt="Réglisse la chèvre naine">
-  </div>
-  <div class="info-section">
-    <div class="info-box">
-      <h2>Informations générales</h2>
-      <p>Race : Chèvre naine miniature<br>
-         Âge : Née le 16/01/2026<br>
-         Sexe : Mâle<br>
-         Couleur : Grise, Noir et Blanche - Type Robe: Âne<br>
-         Poids : non pesé encore kg</p>
-    </div>
 
-    <div class="info-box">
-      <h2>Caractère</h2>
-      <p>Curieus, sociable et très joueur. S'entend bien avec les autres chèvres et les animaux de la ferme.</p>
-    </div>
+<!-- Galerie photos -->
 
-    <div class="info-box">
-      <h2>Santé & Alimentation</h2>
-      <p>Alimentation variée : foin, herbe, légumes. Vaccinations à jour. Boisson fraîche toujours disponible.</p>
-    </div>
-  </div>
+<div class="image-section">
+
+<img src="Réglisse.jpg" alt="Réglisse" onclick="openLightbox(this)">
+<img src="Réglisse2.jpg" alt="Réglisse" onclick="openLightbox(this)">
+<img src="Réglisse3.jpg" alt="Réglisse" onclick="openLightbox(this)">
+<img src="Réglisse4.jpg" alt="Réglisse" onclick="openLightbox(this)">
+
 </div>
 
+
+<!-- Informations -->
+
+<div class="info-section">
+
+<div class="info-box">
+<h2>Informations générales</h2>
+<p>
+Race : Chèvre naine miniature<br>
+Âge : Née le 16/01/2026<br>
+Sexe : Mâle<br>
+Couleur : Grise, Noir et Blanche - Type Robe : Âne<br>
+Poids : non pesé encore
+</p>
+</div>
+
+<div class="info-box">
+<h2>Caractère</h2>
+<p>
+Curieux, sociable et très joueur.  
+S'entend bien avec les autres chèvres et les animaux de la ferme.
+</p>
+</div>
+
+<div class="info-box">
+<h2>Santé & Alimentation</h2>
+<p>
+Alimentation variée : foin, herbe, légumes.  
+Vaccinations à jour.  
+Boisson fraîche toujours disponible.
+</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- image agrandie -->
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
+
+
 <footer>
+
 <a href="Chèvres-naines.html">← Retour aux Chèvres</a> |
-<a href="index.html">← Retour à l'accueil</a> | 
+<a href="index.html">← Retour à l'accueil</a> |
 <a href="carte.html">Voir sur la carte 🌍</a>
+
 </footer>
+
+
+<script>
+
+function openLightbox(img){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=img.src;
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").style.display="none";
+}
+
+</script>
 
 </body>
 </html>
