@@ -1,18 +1,189 @@
-<h1>Les arbres de la mini-ferme</h1>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Les arbres de la ferme</title>
 
-<p>Voici les arbres présents sur la propriété.</p>
+<style>
 
-<ul>
-<li><a href="Arbre-Désespoir du singe.html">Le désespoire du singe</a></li> 
-<li><a href="arbre-1.html">Arbre 1</a></li>  
-<li><a href="arbre-2.html">Arbre 2</a></li>  
-<li><a href="arbre-3.html">Arbre 3</a></li>
-  
-<li><a href="chene-pedoncule.html">Chêne pédonculé</a></li>
-<li>Noyer</li>
-<li>Érable</li>
-</ul>
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#fdf8f0;
+color:#333;
+}
 
-<p>D'autres fiches seront ajoutées progressivement.</p>
+header{
+background:#8dc63f;
+color:white;
+padding:20px;
+text-align:center;
+}
 
-<p><a href="index.html">Retour à l'accueil</a></p>
+header h1{
+margin:0;
+}
+
+/* container */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+/* intro */
+
+.intro{
+margin-bottom:30px;
+}
+
+/* grille */
+
+.arbres-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+
+/* carte */
+
+.arbre{
+background:white;
+border-radius:10px;
+padding:10px;
+text-align:center;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+transition:transform 0.2s;
+overflow:hidden;
+}
+
+.arbre:hover{
+transform:scale(1.05);
+}
+
+.arbre img{
+width:100%;
+aspect-ratio:1/1;
+object-fit:cover;
+border-radius:10px;
+border:3px solid #8dc63f;
+}
+
+/* limitation taille sur PC */
+
+@media (min-width:900px){
+
+.arbre img{
+max-width:180px;
+margin:auto;
+display:block;
+}
+
+}
+
+/* titre */
+
+.arbre h3{
+margin:10px 0 5px 0;
+}
+
+/* lien */
+
+.arbre a{
+text-decoration:none;
+color:#333;
+}
+
+/* footer */
+
+footer{
+text-align:center;
+padding:20px;
+}
+
+footer a{
+color:#8dc63f;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer a:hover{
+text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Les arbres de la Mini-Ferme 🌳</h1>
+</header>
+
+<div class="container">
+
+<div class="intro">
+<p>
+Découvrez les arbres présents sur la mini-ferme.  
+Chaque catégorie vous permet d’en apprendre davantage sur leur origine, leurs caractéristiques et leur rôle dans la nature.
+</p>
+</div>
+
+<div class="arbres-grid">
+
+<!-- Résineux -->
+
+<a href="resineux.html">
+<div class="arbre">
+<img src="resineux.jpg" alt="Résineux">
+<h3>🌲 Résineux</h3>
+<p>Pins, sapins et conifères toujours verts</p>
+</div>
+</a>
+
+<!-- Feuillus -->
+
+<a href="feuillus.html">
+<div class="arbre">
+<img src="feuillus.jpg" alt="Feuillus">
+<h3>🍃 Feuillus</h3>
+<p>Arbres à feuilles qui tombent en automne</p>
+</div>
+</a>
+
+<!-- Fruitiers -->
+
+<a href="fruitiers.html">
+<div class="arbre">
+<img src="fruitiers.jpg" alt="Fruitiers">
+<h3>🍎 Fruitiers</h3>
+<p>Arbres produisant des fruits</p>
+</div>
+</a>
+
+<!-- Ornement -->
+
+<a href="ornement.html">
+<div class="arbre">
+<img src="ornement.jpg" alt="Ornement">
+<h3>🌸 Arbres d’ornement</h3>
+<p>Arbres décoratifs et atypiques</p>
+</div>
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+<a href="index.html">← Retour à l'accueil</a> |
+<a href="animaux.html">Voir les animaux 🐐</a> |
+<a href="carte.html">Voir la carte 🌍</a>
+
+</footer>
+
+</body>
+</html>
