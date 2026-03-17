@@ -32,18 +32,13 @@ margin:auto;
 padding:20px;
 }
 
-/* section */
+/* intro */
 
-.section{
-margin-bottom:40px;
+.intro{
+margin-bottom:30px;
 }
 
-.section h2{
-color:#8dc63f;
-margin-bottom:15px;
-}
-
-/* grille animaux */
+/* grille */
 
 .animaux-grid{
 display:grid;
@@ -51,7 +46,7 @@ grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:20px;
 }
 
-/* carte animal */
+/* carte */
 
 .animal{
 background:white;
@@ -60,6 +55,7 @@ padding:10px;
 text-align:center;
 box-shadow:0 2px 5px rgba(0,0,0,0.1);
 transition:transform 0.2s;
+overflow:hidden;
 }
 
 .animal:hover{
@@ -68,21 +64,25 @@ transform:scale(1.05);
 
 .animal img{
 width:100%;
-aspect-ratio:1/1;   /* format carré parfait */
-object-fit:cover;   /* remplit sans déformer */
+aspect-ratio:1/1;
+object-fit:cover;
 border-radius:10px;
 border:3px solid #8dc63f;
 }
-.animal{
-overflow:hidden;
-}
-  @media (min-width:900px){
+
+/* limitation taille PC */
+
+@media (min-width:900px){
 
 .animal img{
 max-width:180px;
 margin:auto;
 display:block;
 }
+
+}
+
+/* texte */
 
 .animal h3{
 margin:10px 0 5px 0;
@@ -119,104 +119,66 @@ text-decoration:underline;
 <body>
 
 <header>
-<h1>Les animaux de la Mini-Ferme de Nicolas 🐾</h1>
+<h1>🐾 Les animaux de la Mini-Ferme de Nicolas</h1>
 </header>
 
 <div class="container">
 
-<!-- INTRO -->
-
-<div class="section">
+<div class="intro">
 <p>
 Bienvenue à la mini-ferme !  
-Découvrez ici tous nos animaux, chacun avec son caractère et son histoire.  
-Cliquez sur une photo pour en savoir plus.
+Découvrez tous nos animaux, chacun avec son caractère et son histoire.  
+Cliquez sur une catégorie pour en savoir plus.
 </p>
 </div>
 
-<!-- CHEVRES -->
-
-<div class="section">
-<h2>🐐 Chèvres naines</h2>
-
 <div class="animaux-grid">
+
+<!-- CHÈVRES -->
 
 <a href="Chèvres-naines.html">
 <div class="animal">
-<img src="Groupe-Chèvres.jpg">
-<h3>Les chèvres naines</h3>
+<img src="Groupe-Chèvres.jpg" alt="Chèvres naines">
+<h3>🐐 Chèvres naines</h3>
 </div>
 </a>
-
-</div>
-</div>
 
 <!-- MOUTONS -->
 
-<div class="section">
-<h2>🐑 Moutons de Ouessant</h2>
-
-<div class="animaux-grid">
-
 <a href="moutons-ouessant.html">
 <div class="animal">
-<img src="Groupe-Moutons.jpg">
-<h3>Moutons de Ouessant</h3>
+<img src="Groupe-Moutons.jpg" alt="Moutons de Ouessant">
+<h3>🐑 Moutons de Ouessant</h3>
 </div>
 </a>
-
-</div>
-</div>
 
 <!-- TORTUES -->
 
-<div class="section">
-<h2>🐢 Tortues d’Hermann</h2>
-
-<div class="animaux-grid">
-
 <a href="tortues-hermann.html">
 <div class="animal">
-<img src="Groupe-Tortues.jpg">
-<h3>Tortues d’Hermann</h3>
+<img src="Groupe-Tortues.jpg" alt="Tortues d’Hermann">
+<h3>🐢 Tortues d’Hermann</h3>
 </div>
 </a>
-
-</div>
-</div>
 
 <!-- CHATS -->
 
-<div class="section">
-<h2>🐱 Chats de la ferme</h2>
-
-<div class="animaux-grid">
-
 <a href="chats.html">
 <div class="animal">
-<img src="Groupe-Chats.jpg">
-<h3>Chats communs</h3>
+<img src="Groupe-Chats.jpg" alt="Chats">
+<h3>🐱 Chats de la ferme</h3>
 </div>
 </a>
-
-</div>
-</div>
 
 <!-- LAPIN -->
 
-<div class="section">
-<h2>🐰 Lapin</h2>
-
-<div class="animaux-grid">
-
 <a href="lapin-caramelle.html">
 <div class="animal">
-<img src="Caramelle-1.jpg">
-<h3>Caramelle 🧡</h3>
+<img src="Caramelle-1.jpg" alt="Caramelle">
+<h3>🐰 Caramelle</h3>
 </div>
 </a>
 
-</div>
 </div>
 
 </div>
