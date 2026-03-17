@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Désespoir du singe - Araucaria araucana</title>
+
+<style>
+
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#fdf8f0;
+color:#333;
+}
+
+header{
+background:#8dc63f;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+/* Galerie */
+
+.image-section{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+}
+
+.image-section img{
+width:100%;
+border-radius:10px;
+border:3px solid #8dc63f;
+cursor:pointer;
+transition:transform 0.2s;
+}
+
+.image-section img:hover{
+transform:scale(1.05);
+}
+
+/* Infos */
+
+.info-section{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.info-box{
+background:#fffbe6;
+padding:15px;
+border-left:5px solid #8dc63f;
+border-radius:5px;
+}
+
+.info-section h2{
+color:#8dc63f;
+margin-bottom:5px;
+}
+
+/* Lightbox */
+
+.lightbox{
+display:none;
+position:fixed;
+z-index:1000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+/* Responsive */
+
+@media (max-width:900px){
+.container{
+grid-template-columns:1fr;
+}
+}
+
+@media (max-width:600px){
+.image-section{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+/* Footer */
+
+footer{
+text-align:center;
+padding:20px;
+}
+
+footer a{
+color:#8dc63f;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer a:hover{
+text-decoration:underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Le Désespoir du singe 🌳</h1>
+<p><em>Araucaria araucana</em></p>
+</header>
+
+<div class="container">
+
+<!-- Photos -->
+
+<div class="image-section">
+
+<img src="araucaria1.jpg" onclick="openLightbox(this)">
+<img src="araucaria2.jpg" onclick="openLightbox(this)">
+<img src="araucaria3.jpg" onclick="openLightbox(this)">
+<img src="araucaria4.jpg" onclick="openLightbox(this)">
+
+</div>
+
+<!-- Infos -->
+
+<div class="info-section">
+
+<div class="info-box">
+<h2>🌍 Origine</h2>
+<p>
+Originaire des montagnes du Chili et d’Argentine, cet arbre pousse naturellement dans la cordillère des Andes. :contentReference[oaicite:0]{index=0}  
+Il est aujourd’hui planté dans de nombreux jardins pour son aspect unique.
+</p>
+</div>
+
+<div class="info-box">
+<h2>🌿 Description</h2>
+<p>
+Le désespoir du singe est un conifère au tronc droit pouvant atteindre 30 à 40 mètres de hauteur. :contentReference[oaicite:1]{index=1}  
+Ses branches sont disposées en étages réguliers et ses feuilles rigides, épaisses et très piquantes recouvrent entièrement les rameaux. :contentReference[oaicite:2]{index=2}  
+Son aspect est très graphique et presque "préhistorique".
+</p>
+</div>
+
+<div class="info-box">
+<h2>🌲 Particularité</h2>
+<p>
+Son nom vient de ses feuilles très pointues qui rendent son escalade presque impossible, même pour un singe. :contentReference[oaicite:3]{index=3}  
+C’est un arbre très ancien, parfois considéré comme un "fossile vivant".
+</p>
+</div>
+
+<div class="info-box">
+<h2>🌸 Reproduction</h2>
+<p>
+L’arbre est généralement dioïque (mâle et femelle séparés). :contentReference[oaicite:4]{index=4}  
+Il produit de gros cônes pouvant atteindre 15 cm contenant des graines comestibles.
+</p>
+</div>
+
+<div class="info-box">
+<h2>📏 Croissance & taille</h2>
+<p>
+Croissance lente mais longévité exceptionnelle (plusieurs centaines d’années). :contentReference[oaicite:5]{index=5}  
+Peut atteindre 20 à 40 mètres selon les conditions. :contentReference[oaicite:6]{index=6}
+</p>
+</div>
+
+<div class="info-box">
+<h2>☀️ Entretien</h2>
+<p>
+- Exposition : plein soleil<br>
+- Sol : plutôt acide ou neutre<br>
+- Résistance : jusqu’à -15°C environ :contentReference[oaicite:7]{index=7}<br>
+- Entretien : très facile, ne nécessite pas de taille
+</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- Lightbox -->
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
+
+<footer>
+
+<a href="arbres.html">← Retour aux arbres</a> |
+<a href="index.html">← Accueil</a> |
+<a href="carte.html">Voir sur la carte 🌍</a>
+
+</footer>
+
+<script>
+
+function openLightbox(img){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=img.src;
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
