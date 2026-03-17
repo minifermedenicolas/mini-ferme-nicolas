@@ -1,14 +1,222 @@
-<h1>Les animaux de la mini-ferme</h1>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Les animaux de la Mini-Ferme</title>
 
-<p>Voici les animaux présents sur la mini-ferme de Nicolas.</p>
+<style>
 
-<ul>
-<li><a href="Chèvres-naines.html">Chèvres naines</a></li>
-<li>Mouton de Ouessan</li>
-<li>Tortue d'hermann</li>
-<li>Chat commun</li>
-</ul>
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#fdf8f0;
+color:#333;
+}
 
-<p>Chaque espèce possède une fiche détaillée accessible via un QR code sur le terrain.</p>
+header{
+background:#8dc63f;
+color:white;
+padding:20px;
+text-align:center;
+}
 
-<p><a href="index.html">Retour à l'accueil</a></p>
+header h1{
+margin:0;
+}
+
+/* container */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+/* section */
+
+.section{
+margin-bottom:40px;
+}
+
+.section h2{
+color:#8dc63f;
+margin-bottom:15px;
+}
+
+/* grille animaux */
+
+.animaux-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+
+/* carte animal */
+
+.animal{
+background:white;
+border-radius:10px;
+padding:10px;
+text-align:center;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+transition:transform 0.2s;
+}
+
+.animal:hover{
+transform:scale(1.05);
+}
+
+.animal img{
+width:100%;
+height:140px;
+object-fit:cover;
+border-radius:10px;
+border:3px solid #8dc63f;
+}
+
+.animal h3{
+margin:10px 0 5px 0;
+}
+
+/* lien */
+
+.animal a{
+text-decoration:none;
+color:#333;
+}
+
+/* footer */
+
+footer{
+text-align:center;
+padding:20px;
+}
+
+footer a{
+color:#8dc63f;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer a:hover{
+text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Les animaux de la Mini-Ferme de Nicolas 🐾</h1>
+</header>
+
+<div class="container">
+
+<!-- INTRO -->
+
+<div class="section">
+<p>
+Bienvenue à la mini-ferme !  
+Découvrez ici tous nos animaux, chacun avec son caractère et son histoire.  
+Cliquez sur une photo pour en savoir plus.
+</p>
+</div>
+
+<!-- CHEVRES -->
+
+<div class="section">
+<h2>🐐 Chèvres naines</h2>
+
+<div class="animaux-grid">
+
+<a href="Chèvres-naines.html">
+<div class="animal">
+<img src="chevres.jpg">
+<h3>Les chèvres naines</h3>
+</div>
+</a>
+
+</div>
+</div>
+
+<!-- MOUTONS -->
+
+<div class="section">
+<h2>🐑 Moutons de Ouessant</h2>
+
+<div class="animaux-grid">
+
+<a href="moutons-ouessant.html">
+<div class="animal">
+<img src="moutons.jpg">
+<h3>Moutons de Ouessant</h3>
+</div>
+</a>
+
+</div>
+</div>
+
+<!-- TORTUES -->
+
+<div class="section">
+<h2>🐢 Tortues d’Hermann</h2>
+
+<div class="animaux-grid">
+
+<a href="tortues-hermann.html">
+<div class="animal">
+<img src="tortues.jpg">
+<h3>Tortues d’Hermann</h3>
+</div>
+</a>
+
+</div>
+</div>
+
+<!-- CHATS -->
+
+<div class="section">
+<h2>🐱 Chats de la ferme</h2>
+
+<div class="animaux-grid">
+
+<a href="chats.html">
+<div class="animal">
+<img src="chats.jpg">
+<h3>Chats communs</h3>
+</div>
+</a>
+
+</div>
+</div>
+
+<!-- LAPIN -->
+
+<div class="section">
+<h2>🐰 Lapin</h2>
+
+<div class="animaux-grid">
+
+<a href="lapin-caramelle.html">
+<div class="animal">
+<img src="caramelle.jpg">
+<h3>Caramelle 🧡</h3>
+</div>
+</a>
+
+</div>
+</div>
+
+</div>
+
+<footer>
+
+<a href="index.html">← Retour à l'accueil</a> |
+<a href="carte.html">Voir la carte 🌍</a>
+
+</footer>
+
+</body>
+</html>
