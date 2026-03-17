@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Les résineux</title>
+
+<style>
+
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#fdf8f0;
+color:#333;
+}
+
+header{
+background:#8dc63f;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+header h1{
+margin:0;
+}
+
+/* container */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+/* intro */
+
+.intro{
+margin-bottom:30px;
+}
+
+/* grille */
+
+.arbres-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+
+/* carte */
+
+.arbre{
+background:white;
+border-radius:10px;
+padding:10px;
+text-align:center;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+transition:transform 0.2s;
+overflow:hidden;
+}
+
+.arbre:hover{
+transform:scale(1.05);
+}
+
+.arbre img{
+width:100%;
+aspect-ratio:1/1;
+object-fit:cover;
+border-radius:10px;
+border:3px solid #8dc63f;
+}
+
+/* limitation taille PC */
+
+@media (min-width:900px){
+
+.arbre img{
+max-width:180px;
+margin:auto;
+display:block;
+}
+
+}
+
+/* texte */
+
+.arbre h3{
+margin:10px 0 5px 0;
+}
+
+.arbre p{
+font-size:0.9em;
+}
+
+/* lien */
+
+.arbre a{
+text-decoration:none;
+color:#333;
+}
+
+/* footer */
+
+footer{
+text-align:center;
+padding:20px;
+}
+
+footer a{
+color:#8dc63f;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer a:hover{
+text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>🌲 Les résineux</h1>
+</header>
+
+<div class="container">
+
+<div class="intro">
+<p>
+Les résineux sont des arbres qui conservent leurs feuilles toute l’année.  
+Ils possèdent généralement des aiguilles ou des écailles et produisent des cônes (comme les pommes de pin).  
+On les appelle aussi conifères.
+</p>
+</div>
+
+<div class="arbres-grid">
+
+<!-- Exemple 1 -->
+
+<a href="#">
+<div class="arbre">
+<img src="pin.jpg" alt="Pin">
+<h3>Pin</h3>
+<p>Arbre résineux très répandu, reconnaissable à ses aiguilles.</p>
+</div>
+</a>
+
+<!-- Exemple 2 -->
+
+<a href="#">
+<div class="arbre">
+<img src="sapin.jpg" alt="Sapin">
+<h3>Sapin</h3>
+<p>Conifère emblématique souvent utilisé comme arbre de Noël.</p>
+</div>
+</a>
+
+<!-- Exemple 3 -->
+
+<a href="#">
+<div class="arbre">
+<img src="thuya.jpg" alt="Thuya">
+<h3>Thuya</h3>
+<p>Arbre utilisé pour les haies, au feuillage dense.</p>
+</div>
+</a>
+
+<!-- Désespoir du singe (rappel pédagogique) -->
+
+<a href="desespoir-du-singe.html">
+<div class="arbre">
+<img src="araucaria.jpg" alt="Araucaria">
+<h3>Araucaria</h3>
+<p>Un résineux original aussi classé comme arbre d’ornement.</p>
+</div>
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+<a href="arbres.html">← Retour aux arbres</a> |
+<a href="ornement.html">Voir les arbres d’ornement 🌸</a> |
+<a href="index.html">← Accueil</a> |
+<a href="carte.html">Voir la carte 🌍</a>
+
+</footer>
+
+</body>
+</html>
