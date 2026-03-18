@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bélier - Mouton</title>
+
+<style>
+
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#fdf8f0;
+color:#333;
+}
+
+header{
+background:#6b4f2a;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+header h1{
+margin:0;
+font-size:2em;
+}
+
+/* STRUCTURE */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+/* INFOS */
+
+.info-section{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.info-box{
+background:#fff8ec;
+padding:15px;
+border-left:5px solid #6b4f2a;
+border-radius:5px;
+}
+
+.info-section h2{
+color:#6b4f2a;
+margin-bottom:5px;
+}
+
+/* IMAGES */
+
+.image-section{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+}
+
+.image-section img{
+width:100%;
+border-radius:10px;
+border:3px solid #6b4f2a;
+cursor:pointer;
+transition:transform 0.2s;
+}
+
+.image-section img:hover{
+transform:scale(1.05);
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+display:none;
+position:fixed;
+z-index:1000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+/* TABLETTE & MOBILE */
+
+@media (max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.info-section{
+order:1;
+}
+
+.image-section{
+order:2;
+}
+
+}
+
+@media (max-width:600px){
+
+.image-section{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+font-size:1em;
+}
+
+footer a{
+color:#6b4f2a;
+text-decoration:none;
+font-weight:bold;
+font-size:1em;
+}
+
+footer a:hover{
+text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Mouton - Bélier d’Ouessant</h1>
+</header>
+
+<div class="container">
+
+<!-- INFOS -->
+
+<div class="info-section">
+
+<div class="info-box">
+<h2>Informations générales</h2>
+<p>
+Race : Mouton d’Ouessant<br>
+Âge : Né le 07/01/2024<br>
+Sexe : Mâle (bélier)<br>
+Rôle : Gardien et pilier du troupeau
+</p>
+</div>
+
+<div class="info-box">
+<h2>Le pilier de la ferme</h2>
+<p>
+Mouton est sans aucun doute l’animal le plus puissant de la ferme.  
+Sa présence impose naturellement le respect, mais derrière cette force se cache un caractère exceptionnellement doux.  
+
+Il veille sur tout le monde avec calme et sérénité, sans jamais chercher à dominer par la force.
+</p>
+</div>
+
+<div class="info-box">
+<h2>Caractère</h2>
+<p>
+Malgré sa puissance, Mouton est d’une grande gentillesse.  
+Il s’entend avec tous les animaux de la ferme, y compris Câlimé avec qui il partage de nombreux moments de complicité.  
+
+Entre eux, ce sont jeux tranquilles, petites confrontations amicales… et même des moments de tendresse.
+</p>
+</div>
+
+<div class="info-box">
+<h2>Complicité avec Bounty 🐐</h2>
+<p>
+Depuis la naissance de Bounty, Mouton a développé avec elle une relation toute particulière.  
+On pourrait presque dire qu’il est devenu son papa adoptif.  
+
+Il l’accompagne, la laisse jouer avec lui… et surtout, il a participé malgré lui à de magnifiques démonstrations de "saute-mouton" grandeur nature 😄  
+
+Son dos bien moelleux était le terrain de jeu idéal !
+</p>
+</div>
+
+<div class="info-box">
+<h2>Une force tranquille</h2>
+<p>
+Mouton incarne parfaitement l’équilibre de la ferme :  
+puissance, calme et bienveillance.  
+
+Un vrai chef… sans jamais avoir besoin de le montrer.
+</p>
+</div>
+
+</div>
+
+<!-- IMAGES -->
+
+<div class="image-section">
+
+<img src="Mouton-1.jpg" onclick="openLightbox(this)">
+<img src="Mouton-2.jpg" onclick="openLightbox(this)">
+<img src="Mouton-0.jpg" onclick="openLightbox(this)">
+<img src="Mouton-4.jpg" onclick="openLightbox(this)">
+
+</div>
+
+</div>
+
+<!-- LIGHTBOX -->
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
+
+<footer>
+
+<a href="animaux.html">← Retour aux animaux</a> |
+<a href="index.html">← Retour à l'accueil</a> |
+<a href="carte.html">Voir sur la carte 🌍</a>
+
+</footer>
+
+<script>
+
+function openLightbox(img){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=img.src;
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
