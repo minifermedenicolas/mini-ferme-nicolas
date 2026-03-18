@@ -36,13 +36,13 @@ padding:20px;
 
 .intro{
 margin-bottom:30px;
+font-size:1.1em;
 }
 
 /* grille */
 
 .arbres-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:20px;
 }
 
@@ -51,16 +51,18 @@ gap:20px;
 .arbre{
 background:white;
 border-radius:10px;
-padding:10px;
-text-align:center;
+padding:15px;
 box-shadow:0 2px 5px rgba(0,0,0,0.1);
 transition:transform 0.2s;
-overflow:hidden;
+display:flex;
+flex-direction:column; /* MOBILE = vertical */
 }
 
 .arbre:hover{
-transform:scale(1.05);
+transform:scale(1.02);
 }
+
+/* image */
 
 .arbre img{
 width:100%;
@@ -68,24 +70,22 @@ aspect-ratio:1/1;
 object-fit:cover;
 border-radius:10px;
 border:3px solid #8dc63f;
+margin-top:10px;
 }
 
-/* limitation taille sur PC */
+/* texte */
 
-@media (min-width:900px){
-
-.arbre img{
-max-width:180px;
-margin:auto;
-display:block;
+.arbre-content{
+text-align:left;
 }
-
-}
-
-/* titre */
 
 .arbre h3{
-margin:10px 0 5px 0;
+margin:0 0 5px 0;
+font-size:1.3em;
+}
+
+.arbre p{
+font-size:1em;
 }
 
 /* lien */
@@ -93,6 +93,29 @@ margin:10px 0 5px 0;
 .arbre a{
 text-decoration:none;
 color:#333;
+}
+
+/* ========================= */
+/* VERSION ORDINATEUR */
+/* ========================= */
+
+@media (min-width:900px){
+
+.arbre{
+flex-direction:row; /* côte à côte */
+align-items:center;
+gap:20px;
+}
+
+.arbre img{
+max-width:180px;
+margin-top:0;
+}
+
+.arbre-content{
+flex:1;
+}
+
 }
 
 /* footer */
@@ -137,9 +160,11 @@ Chaque catégorie vous permet d’en apprendre davantage sur leur origine, leurs
 
 <a href="Résineux.html">
 <div class="arbre">
-<img src="resineux.jpg" alt="Résineux">
+<div class="arbre-content">
 <h3>🌲 Résineux</h3>
-<p>Pins, sapins et conifères toujours verts</p>
+<p>Pins, sapins et conifères toujours verts.</p>
+</div>
+<img src="resineux.jpg" alt="Résineux">
 </div>
 </a>
 
@@ -147,9 +172,11 @@ Chaque catégorie vous permet d’en apprendre davantage sur leur origine, leurs
 
 <a href="Feuillus.html">
 <div class="arbre">
-<img src="feuillus.jpg" alt="Feuillus">
+<div class="arbre-content">
 <h3>🍃 Feuillus</h3>
-<p>Arbres à feuilles qui tombent en automne</p>
+<p>Arbres à feuilles qui tombent en automne.</p>
+</div>
+<img src="feuillus.jpg" alt="Feuillus">
 </div>
 </a>
 
@@ -157,9 +184,11 @@ Chaque catégorie vous permet d’en apprendre davantage sur leur origine, leurs
 
 <a href="Fruitiers.html">
 <div class="arbre">
-<img src="fruitiers.jpg" alt="Fruitiers">
+<div class="arbre-content">
 <h3>🍎 Fruitiers</h3>
-<p>Arbres produisant des fruits</p>
+<p>Arbres produisant des fruits.</p>
+</div>
+<img src="fruitiers.jpg" alt="Fruitiers">
 </div>
 </a>
 
@@ -167,9 +196,11 @@ Chaque catégorie vous permet d’en apprendre davantage sur leur origine, leurs
 
 <a href="Ornement.html">
 <div class="arbre">
-<img src="Ornement.jpg" alt="Ornement">
+<div class="arbre-content">
 <h3>🌸 Arbres d’ornement</h3>
-<p>Arbres décoratifs et atypiques</p>
+<p>Arbres décoratifs et atypiques.</p>
+</div>
+<img src="Ornement.jpg" alt="Ornement">
 </div>
 </a>
 
