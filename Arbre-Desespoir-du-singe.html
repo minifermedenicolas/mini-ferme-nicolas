@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Désespoir du singe - Araucaria araucana</title>
 
-
 <style>
 
 body{
@@ -21,25 +20,29 @@ padding:20px;
 text-align:center;
 }
 
+/* CONTAINER */
+
 .container{
 max-width:1100px;
 margin:auto;
 padding:20px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:25px;
+display:flex;
+flex-direction:column; /* MOBILE */
+gap:30px;
 }
 
-/* Galerie */
+/* GALERIE */
 
 .image-section{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+grid-template-columns:repeat(2,1fr);
 gap:15px;
 }
 
 .image-section img{
 width:100%;
+aspect-ratio:1/1;
+object-fit:cover;
 border-radius:10px;
 border:3px solid #8dc63f;
 cursor:pointer;
@@ -50,7 +53,7 @@ transition:transform 0.2s;
 transform:scale(1.05);
 }
 
-/* Infos */
+/* INFOS */
 
 .info-section{
 display:flex;
@@ -70,7 +73,7 @@ color:#8dc63f;
 margin-bottom:5px;
 }
 
-/* Lightbox */
+/* LIGHTBOX */
 
 .lightbox{
 display:none;
@@ -91,21 +94,29 @@ max-height:90%;
 border-radius:10px;
 }
 
-/* Responsive */
+/* ========================= */
+/* VERSION ORDINATEUR */
+/* ========================= */
 
-@media (max-width:900px){
+@media (min-width:900px){
+
 .container{
-grid-template-columns:1fr;
-}
+flex-direction:row;
+align-items:flex-start;
 }
 
-@media (max-width:600px){
 .image-section{
+flex:1;
 grid-template-columns:repeat(2,1fr);
 }
+
+.info-section{
+flex:1;
 }
 
-/* Footer */
+}
+
+/* FOOTER */
 
 footer{
 text-align:center;
@@ -134,7 +145,64 @@ text-decoration:underline;
 
 <div class="container">
 
-<!-- Photos -->
+<!-- INFOS (EN HAUT SUR MOBILE) -->
+
+<div class="info-section">
+
+<div class="info-box">
+<h2>🌍 Origine</h2>
+<p>
+Originaire des montagnes du Chili et d’Argentine, cet arbre pousse naturellement dans la cordillère des Andes.  
+Il est aujourd’hui planté dans de nombreux jardins pour son aspect unique.
+</p>
+</div>
+
+<div class="info-box">
+<h2>🌿 Description</h2>
+<p>
+Le désespoir du singe est un conifère au tronc droit pouvant atteindre 30 à 40 mètres de hauteur.  
+Ses branches sont disposées en étages réguliers et ses feuilles rigides, épaisses et très piquantes recouvrent entièrement les rameaux.  
+Son aspect est très graphique et presque "préhistorique".
+</p>
+</div>
+
+<div class="info-box">
+<h2>🌲 Particularité</h2>
+<p>
+Son nom vient de ses feuilles très pointues qui rendent son escalade presque impossible, même pour un singe.  
+C’est un arbre très ancien, souvent considéré comme un "fossile vivant".
+</p>
+</div>
+
+<div class="info-box">
+<h2>🌸 Reproduction</h2>
+<p>
+L’arbre est généralement dioïque (mâle et femelle séparés).  
+Il produit de gros cônes pouvant atteindre 15 cm contenant des graines comestibles.
+</p>
+</div>
+
+<div class="info-box">
+<h2>📏 Croissance & taille</h2>
+<p>
+Croissance lente mais longévité exceptionnelle (plusieurs centaines d’années).  
+Peut atteindre 20 à 40 mètres selon les conditions.
+</p>
+</div>
+
+<div class="info-box">
+<h2>☀️ Entretien</h2>
+<p>
+- Exposition : plein soleil<br>
+- Sol : plutôt acide ou neutre<br>
+- Résistance : jusqu’à -15°C environ<br>
+- Entretien : très facile, ne nécessite pas de taille
+</p>
+</div>
+
+</div>
+
+<!-- PHOTOS (EN BAS MOBILE / GAUCHE PC) -->
 
 <div class="image-section">
 
@@ -145,66 +213,9 @@ text-decoration:underline;
 
 </div>
 
-<!-- Infos -->
-
-<div class="info-section">
-
-<div class="info-box">
-<h2>🌍 Origine</h2>
-<p>
-Originaire des montagnes du Chili et d’Argentine, cet arbre pousse naturellement dans la cordillère des Andes. :contentReference[oaicite:0]{index=0}  
-Il est aujourd’hui planté dans de nombreux jardins pour son aspect unique.
-</p>
 </div>
 
-<div class="info-box">
-<h2>🌿 Description</h2>
-<p>
-Le désespoir du singe est un conifère au tronc droit pouvant atteindre 30 à 40 mètres de hauteur. :contentReference[oaicite:1]{index=1}  
-Ses branches sont disposées en étages réguliers et ses feuilles rigides, épaisses et très piquantes recouvrent entièrement les rameaux. :contentReference[oaicite:2]{index=2}  
-Son aspect est très graphique et presque "préhistorique".
-</p>
-</div>
-
-<div class="info-box">
-<h2>🌲 Particularité</h2>
-<p>
-Son nom vient de ses feuilles très pointues qui rendent son escalade presque impossible, même pour un singe. :contentReference[oaicite:3]{index=3}  
-C’est un arbre très ancien, parfois considéré comme un "fossile vivant".
-</p>
-</div>
-
-<div class="info-box">
-<h2>🌸 Reproduction</h2>
-<p>
-L’arbre est généralement dioïque (mâle et femelle séparés). :contentReference[oaicite:4]{index=4}  
-Il produit de gros cônes pouvant atteindre 15 cm contenant des graines comestibles.
-</p>
-</div>
-
-<div class="info-box">
-<h2>📏 Croissance & taille</h2>
-<p>
-Croissance lente mais longévité exceptionnelle (plusieurs centaines d’années). :contentReference[oaicite:5]{index=5}  
-Peut atteindre 20 à 40 mètres selon les conditions. :contentReference[oaicite:6]{index=6}
-</p>
-</div>
-
-<div class="info-box">
-<h2>☀️ Entretien</h2>
-<p>
-- Exposition : plein soleil<br>
-- Sol : plutôt acide ou neutre<br>
-- Résistance : jusqu’à -15°C environ :contentReference[oaicite:7]{index=7}<br>
-- Entretien : très facile, ne nécessite pas de taille
-</p>
-</div>
-
-</div>
-
-</div>
-
-<!-- Lightbox -->
+<!-- LIGHTBOX -->
 
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
 <img id="lightbox-img">
