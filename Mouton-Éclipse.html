@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brebis - Éclipse</title>
+
+<style>
+
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#fdf8f0;
+color:#333;
+}
+
+header{
+background:#3a3a3a;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+header h1{
+margin:0;
+font-size:2em;
+}
+
+/* STRUCTURE */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+/* INFOS */
+
+.info-section{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.info-box{
+background:#fff8ec;
+padding:15px;
+border-left:5px solid #3a3a3a;
+border-radius:5px;
+}
+
+.info-section h2{
+color:#3a3a3a;
+margin-bottom:5px;
+}
+
+/* IMAGES */
+
+.image-section{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+}
+
+.image-section img{
+width:100%;
+border-radius:10px;
+border:3px solid #3a3a3a;
+cursor:pointer;
+transition:transform 0.2s;
+}
+
+.image-section img:hover{
+transform:scale(1.05);
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+display:none;
+position:fixed;
+z-index:1000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+/* TABLETTE & MOBILE */
+
+@media (max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.info-section{
+order:1;
+}
+
+.image-section{
+order:2;
+}
+
+}
+
+@media (max-width:600px){
+
+.image-section{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+font-size:1em;
+}
+
+footer a{
+color:#3a3a3a;
+text-decoration:none;
+font-weight:bold;
+font-size:1em;
+}
+
+footer a:hover{
+text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Éclipse - Brebis d’Ouessant</h1>
+</header>
+
+<div class="container">
+
+<!-- INFOS -->
+
+<div class="info-section">
+
+<div class="info-box">
+<h2>Informations générales</h2>
+<p>
+Race : Mouton d’Ouessant<br>
+Sexe : Femelle (brebis)<br>
+Compagnon : Mouton (bélier)<br>
+Petite : Pralinée
+</p>
+</div>
+
+<div class="info-box">
+<h2>La discrète de la ferme</h2>
+<p>
+Éclipse porte parfaitement son nom.  
+Noire comme une éclipse de soleil, elle sait aussi disparaître en un éclair dès qu’elle se sent observée.  
+
+C’est la plus timide et la plus farouche de tous les animaux de la ferme.
+</p>
+</div>
+
+<div class="info-box">
+<h2>Caractère</h2>
+<p>
+Naturellement méfiante, Éclipse garde ses distances avec l’humain.  
+Ce comportement vient en grande partie de sa race, les moutons d’Ouessant étant connus pour leur tempérament plus sauvage.  
+
+Mais derrière cette réserve se cache une brebis douce et très attachée à son environnement.
+</p>
+</div>
+
+<div class="info-box">
+<h2>Vie de famille 🐑</h2>
+<p>
+Éclipse partage sa vie avec Mouton, le bélier de la ferme.  
+Ensemble, ils ont eu une petite brebis nommée Pralinée.  
+
+Comme Oréo avec Bounty, Éclipse et sa fille sont totalement inséparables.  
+Elles passent la majorité de leur temps ensemble, toujours proches l’une de l’autre.
+</p>
+</div>
+
+<div class="info-box">
+<h2>Une présence discrète mais essentielle</h2>
+<p>
+Même si elle reste en retrait, Éclipse fait partie des piliers silencieux de la ferme.  
+
+Elle observe, elle veille à sa manière…  
+et apporte un équilibre naturel au troupeau.
+</p>
+</div>
+
+</div>
+
+<!-- IMAGES -->
+
+<div class="image-section">
+
+<img src="Éclipse-1.jpg" onclick="openLightbox(this)">
+<img src="Éclipse-2.jpg" onclick="openLightbox(this)">
+<img src="Éclipse-3.jpg" onclick="openLightbox(this)">
+<img src="Éclipse-0.jpg" onclick="openLightbox(this)">
+
+</div>
+
+</div>
+
+<!-- LIGHTBOX -->
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
+
+<footer>
+
+<a href="animaux.html">← Retour aux animaux</a> |
+<a href="index.html">← Retour à l'accueil</a> |
+<a href="carte.html">Voir sur la carte 🌍</a>
+
+</footer>
+
+<script>
+
+function openLightbox(img){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=img.src;
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
