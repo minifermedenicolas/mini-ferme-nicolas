@@ -22,9 +22,10 @@ text-align:center;
 
 header h1{
 margin:0;
+font-size:2em;
 }
 
-/* structure générale */
+/* structure */
 
 .container{
 max-width:1100px;
@@ -35,7 +36,27 @@ grid-template-columns:1fr 1fr;
 gap:25px;
 }
 
-/* galerie photo */
+/* infos */
+
+.info-section{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.info-box{
+background:#fffbe6;
+padding:15px;
+border-left:5px solid #8dc63f;
+border-radius:5px;
+}
+
+.info-section h2{
+color:#8dc63f;
+margin-bottom:5px;
+}
+
+/* images */
 
 .image-section{
 display:grid;
@@ -55,27 +76,7 @@ transition:transform 0.2s;
 transform:scale(1.05);
 }
 
-/* section informations */
-
-.info-section{
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-.info-section h2{
-color:#8dc63f;
-margin-bottom:5px;
-}
-
-.info-box{
-background:#fffbe6;
-padding:15px;
-border-left:5px solid #8dc63f;
-border-radius:5px;
-}
-
-/* image plein écran */
+/* LIGHTBOX */
 
 .lightbox{
 display:none;
@@ -96,7 +97,7 @@ max-height:90%;
 border-radius:10px;
 }
 
-/* responsive tablette */
+/* TABLETTE */
 
 @media (max-width:900px){
 
@@ -104,9 +105,19 @@ border-radius:10px;
 grid-template-columns:1fr;
 }
 
+/* 🔥 ordre mobile : texte puis images */
+
+.info-section{
+order:1;
 }
 
-/* responsive smartphone */
+.image-section{
+order:2;
+}
+
+}
+
+/* SMARTPHONE */
 
 @media (max-width:600px){
 
@@ -116,17 +127,19 @@ grid-template-columns:repeat(2,1fr);
 
 }
 
-/* footer */
+/* FOOTER */
 
 footer{
 text-align:center;
 padding:20px;
+font-size:1em;
 }
 
 footer a{
 color:#8dc63f;
 text-decoration:none;
 font-weight:bold;
+font-size:1em;
 }
 
 footer a:hover{
@@ -140,25 +153,12 @@ text-decoration:underline;
 <body>
 
 <header>
-<h1>Réglisse - Chèvre Naine</h1>
+<h1>Réglisse - Chèvre naine</h1>
 </header>
-
 
 <div class="container">
 
-<!-- Galerie photos -->
-
-<div class="image-section">
-
-<img src="Réglisse-1.jpg" alt="Réglisse" onclick="openLightbox(this)">
-<img src="Réglisse-2.jpg" alt="Réglisse" onclick="openLightbox(this)">
-<img src="Réglisse-3.jpg" alt="Réglisse" onclick="openLightbox(this)">
-<img src="Réglisse-4.jpg" alt="Réglisse" onclick="openLightbox(this)">
-
-</div>
-
-
-<!-- Informations -->
+<!-- INFOS EN PREMIER -->
 
 <div class="info-section">
 
@@ -166,10 +166,10 @@ text-decoration:underline;
 <h2>Informations générales</h2>
 <p>
 Race : Chèvre naine miniature<br>
-Âge : Née le 16/01/2026<br>
+Âge : Né le 16/01/2026<br>
 Sexe : Mâle<br>
-Couleur : Grise, Noir et Blanche - Type Robe : Âne<br>
-Poids : non pesé encore
+Couleur : Grise, noire et blanche (type robe âne)<br>
+Poids : Non renseigné
 </p>
 </div>
 
@@ -177,30 +177,39 @@ Poids : non pesé encore
 <h2>Caractère</h2>
 <p>
 Curieux, sociable et très joueur.  
-S'entend bien avec les autres chèvres et les animaux de la ferme.
+Il s’entend bien avec les autres chèvres et les animaux de la ferme.
 </p>
 </div>
 
 <div class="info-box">
-<h2>Santé & Alimentation</h2>
+<h2>Santé & alimentation</h2>
 <p>
-Alimentation variée : foin, herbe, légumes.  
+Alimentation variée : foin, herbe et légumes.  
 Vaccinations à jour.  
-Boisson fraîche toujours disponible.
+Eau fraîche toujours disponible.
 </p>
 </div>
 
 </div>
 
+<!-- IMAGES -->
+
+<div class="image-section">
+
+<img src="Réglisse-1.jpg" onclick="openLightbox(this)">
+<img src="Réglisse-2.jpg" onclick="openLightbox(this)">
+<img src="Réglisse-3.jpg" onclick="openLightbox(this)">
+<img src="Réglisse-4.jpg" onclick="openLightbox(this)">
+
 </div>
 
+</div>
 
-<!-- image agrandie -->
+<!-- LIGHTBOX -->
 
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
 <img id="lightbox-img">
 </div>
-
 
 <footer>
 
@@ -209,7 +218,6 @@ Boisson fraîche toujours disponible.
 <a href="carte.html">Voir sur la carte 🌍</a>
 
 </footer>
-
 
 <script>
 
