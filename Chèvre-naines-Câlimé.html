@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bouc nain - Câlimé</title>
+
+<style>
+
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#fdf8f0;
+color:#333;
+}
+
+header{
+background:#8dc63f;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+header h1{
+margin:0;
+font-size:2em;
+}
+
+/* STRUCTURE */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+/* INFOS */
+
+.info-section{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.info-box{
+background:#fffbe6;
+padding:15px;
+border-left:5px solid #8dc63f;
+border-radius:5px;
+}
+
+.info-section h2{
+color:#8dc63f;
+margin-bottom:5px;
+}
+
+/* IMAGES */
+
+.image-section{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+}
+
+.image-section img{
+width:100%;
+border-radius:10px;
+border:3px solid #8dc63f;
+cursor:pointer;
+transition:transform 0.2s;
+}
+
+.image-section img:hover{
+transform:scale(1.05);
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+display:none;
+position:fixed;
+z-index:1000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+/* TABLETTE & MOBILE */
+
+@media (max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.info-section{
+order:1;
+}
+
+.image-section{
+order:2;
+}
+
+}
+
+@media (max-width:600px){
+
+.image-section{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+font-size:1em;
+}
+
+footer a{
+color:#8dc63f;
+text-decoration:none;
+font-weight:bold;
+font-size:1em;
+}
+
+footer a:hover{
+text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Câlimé - Bouc nain</h1>
+</header>
+
+<div class="container">
+
+<!-- INFOS -->
+
+<div class="info-section">
+
+<div class="info-box">
+<h2>Informations générales</h2>
+<p>
+Race : Bouc nain miniature<br>
+Âge : Né le 24/01/2024<br>
+Sexe : Mâle<br>
+Particularité : Sans cornes<br>
+Gabarit : Limite catégorie "Toy"<br>
+Origine : Même élevage que Oréo (sans lien de parenté)
+</p>
+</div>
+
+<div class="info-box">
+<h2>Vie à la ferme</h2>
+<p>
+Câlimé est le papa de Bounty, qu’il a eu avec Oréo.  
+Il s’entend très bien avec Mouton, le bélier de la ferme, avec qui il partage souvent son espace.
+</p>
+</div>
+
+<div class="info-box">
+<h2>Caractère</h2>
+<p>
+Plutôt calme et sociable, Câlimé est un bouc attachant malgré son petit gabarit.  
+Il trouve facilement sa place dans le troupeau.
+</p>
+</div>
+
+<div class="info-box">
+<h2>La petite histoire 😄</h2>
+<p>
+Câlimé doit son nom à son apparence : noir, de petite taille, avec le bout des oreilles blanches…  
+Avec tous ces critères, il pourrait facilement dire :  
+<strong>"C’est vraiment trop injuste !"</strong>  
+Une référence évidente… surtout quand on connaît le nom de famille du propriétaire 😉
+</p>
+</div>
+
+</div>
+
+<!-- IMAGES -->
+
+<div class="image-section">
+
+<img src="Calime-1.jpg" onclick="openLightbox(this)">
+<img src="Calime-2.jpg" onclick="openLightbox(this)">
+<img src="Calime-3.jpg" onclick="openLightbox(this)">
+<img src="Calime-4.jpg" onclick="openLightbox(this)">
+
+</div>
+
+</div>
+
+<!-- LIGHTBOX -->
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
+
+<footer>
+
+<a href="Chèvres-naines.html">← Retour aux Chèvres</a> |
+<a href="index.html">← Retour à l'accueil</a> |
+<a href="carte.html">Voir sur la carte 🌍</a>
+
+</footer>
+
+<script>
+
+function openLightbox(img){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=img.src;
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
