@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Les arbres de la ferme</title>
+<title>Les arbres de la Mini-Ferme</title>
 
 <style>
 
@@ -36,13 +36,13 @@ padding:20px;
 
 .intro{
 margin-bottom:30px;
-font-size:1.1em;
 }
 
 /* grille */
 
 .arbres-grid{
 display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:20px;
 }
 
@@ -51,18 +51,18 @@ gap:20px;
 .arbre{
 background:white;
 border-radius:10px;
-padding:15px;
+padding:10px;
+text-align:center;
 box-shadow:0 2px 5px rgba(0,0,0,0.1);
 transition:transform 0.2s;
-display:flex;
-flex-direction:column; /* MOBILE = vertical */
+overflow:hidden;
 }
 
 .arbre:hover{
-transform:scale(1.02);
+transform:scale(1.05);
 }
 
-/* image */
+/* IMAGE */
 
 .arbre img{
 width:100%;
@@ -70,22 +70,24 @@ aspect-ratio:1/1;
 object-fit:cover;
 border-radius:10px;
 border:3px solid #8dc63f;
-margin-top:10px;
 }
 
-/* texte */
+/* limitation taille PC */
 
-.arbre-content{
-text-align:left;
+@media (min-width:900px){
+
+.arbre img{
+max-width:180px;
+margin:auto;
+display:block;
 }
+
+}
+
+/* TEXTE */
 
 .arbre h3{
-margin:0 0 5px 0;
-font-size:1.3em;
-}
-
-.arbre p{
-font-size:1em;
+margin:10px 0 5px 0;
 }
 
 /* lien */
@@ -93,29 +95,6 @@ font-size:1em;
 .arbre a{
 text-decoration:none;
 color:#333;
-}
-
-/* ========================= */
-/* VERSION ORDINATEUR */
-/* ========================= */
-
-@media (min-width:900px){
-
-.arbre{
-flex-direction:row; /* côte à côte */
-align-items:center;
-gap:20px;
-}
-
-.arbre img{
-max-width:180px;
-margin-top:0;
-}
-
-.arbre-content{
-flex:1;
-}
-
 }
 
 /* footer */
@@ -142,64 +121,52 @@ text-decoration:underline;
 <body>
 
 <header>
-<h1>Les arbres de la Mini-Ferme 🌳</h1>
+<h1>🌳 Les arbres de la Mini-Ferme</h1>
 </header>
 
 <div class="container">
 
 <div class="intro">
 <p>
-Découvrez les arbres présents sur la mini-ferme.  
-Chaque catégorie vous permet d’en apprendre davantage sur leur origine, leurs caractéristiques et leur rôle dans la nature.
+Découvrez les différentes catégories d’arbres présentes sur la mini-ferme.  
+Chaque groupe possède ses particularités et son rôle dans l’équilibre naturel.
 </p>
 </div>
 
 <div class="arbres-grid">
 
-<!-- Résineux -->
+<!-- RÉSINEUX -->
 
 <a href="Résineux.html">
 <div class="arbre">
-<div class="arbre-content">
 <h3>🌲 Résineux</h3>
-<p>Pins, sapins et conifères toujours verts.</p>
-</div>
 <img src="resineux.jpg" alt="Résineux">
 </div>
 </a>
 
-<!-- Feuillus -->
+<!-- FEUILLUS -->
 
 <a href="Feuillus.html">
 <div class="arbre">
-<div class="arbre-content">
 <h3>🍃 Feuillus</h3>
-<p>Arbres à feuilles qui tombent en automne.</p>
-</div>
 <img src="feuillus.jpg" alt="Feuillus">
 </div>
 </a>
 
-<!-- Fruitiers -->
+<!-- FRUITIERS -->
 
 <a href="Fruitiers.html">
 <div class="arbre">
-<div class="arbre-content">
 <h3>🍎 Fruitiers</h3>
-<p>Arbres produisant des fruits.</p>
-</div>
 <img src="fruitiers.jpg" alt="Fruitiers">
 </div>
 </a>
 
-<!-- Ornement -->
+<!-- ORNEMENT -->
 
 <a href="Ornement.html">
 <div class="arbre">
-<div class="arbre-content">
 <h3>🌸 Arbres d’ornement</h3>
-<p>Arbres décoratifs et atypiques.</p>
-</div>
 <img src="Ornement.jpg" alt="Ornement">
 </div>
 </a>
