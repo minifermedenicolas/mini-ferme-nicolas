@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tortue d’Hermann - Flash</title>
+
+<style>
+
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#fdf8f0;
+color:#333;
+}
+
+header{
+background:#6c8a2b;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+header h1{
+margin:0;
+font-size:2em;
+}
+
+/* STRUCTURE */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+/* INFOS */
+
+.info-section{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.info-box{
+background:#f4fbe6;
+padding:15px;
+border-left:5px solid #6c8a2b;
+border-radius:5px;
+}
+
+.info-section h2{
+color:#6c8a2b;
+margin-bottom:5px;
+}
+
+/* IMAGES */
+
+.image-section{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+}
+
+.image-section img{
+width:100%;
+border-radius:10px;
+border:3px solid #6c8a2b;
+cursor:pointer;
+transition:transform 0.2s;
+}
+
+.image-section img:hover{
+transform:scale(1.05);
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+display:none;
+position:fixed;
+z-index:1000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.info-section{
+order:1;
+}
+
+.image-section{
+order:2;
+}
+
+}
+
+@media (max-width:600px){
+
+.image-section{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+font-size:1em;
+}
+
+footer a{
+color:#6c8a2b;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer a:hover{
+text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Flash - Tortue d’Hermann</h1>
+</header>
+
+<div class="container">
+
+<!-- INFOS -->
+
+<div class="info-section">
+
+<div class="info-box">
+<h2>Informations générales</h2>
+<p>
+Espèce : Tortue d’Hermann<br>
+Sexe : Indéterminé (trop jeune)<br>
+Né(e) en : 2025<br>
+Compagnon : Benji
+</p>
+</div>
+
+<div class="info-box">
+<h2>Un duo inséparable</h2>
+<p>
+Flash vit aux côtés de Benji avec qui il partage son quotidien.  
+Tous les deux évoluent ensemble dans leur parc, entre exploration tranquille et longues pauses au soleil.
+</p>
+</div>
+
+<div class="info-box">
+<h2>Un détail unique ✨</h2>
+<p>
+Flash doit son nom à une particularité bien à lui :  
+à l’avant de sa carapace, une légère décoloration rappelle un "flash", comme une mèche éclaircie chez le coiffeur.  
+
+Un petit détail qui le rend immédiatement reconnaissable… et totalement unique !
+</p>
+</div>
+
+<div class="info-box">
+<h2>Un tempérament paisible</h2>
+<p>
+Comme toutes les tortues d’Hermann, Flash avance à son rythme.  
+Calme, discret et observateur, il profite pleinement de son environnement sans jamais se presser.
+</p>
+</div>
+
+<div class="info-box">
+<h2>La petite anecdote 🐢</h2>
+<p>
+Avec sa "coiffure naturelle", Flash pourrait presque passer pour la tortue la plus stylée de la mini-ferme !  
+
+Un look discret… mais qui ne passe jamais inaperçu quand on prend le temps de l’observer.
+</p>
+</div>
+
+</div>
+
+<!-- IMAGES -->
+
+<div class="image-section">
+
+<img src="Tortues-1.jpg" onclick="openLightbox(this)">
+<img src="Tortues-2.jpg" onclick="openLightbox(this)">
+<img src="Tortues-3.jpg" onclick="openLightbox(this)">
+<img src="Tortues-4.jpg" onclick="openLightbox(this)">
+
+</div>
+
+</div>
+
+<!-- LIGHTBOX -->
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
+
+<footer>
+
+<a href="animaux.html">← Retour aux animaux</a> |
+<a href="index.html">← Retour à l'accueil</a> |
+<a href="carte.html">Voir sur la carte 🌍</a>
+
+</footer>
+
+<script>
+
+function openLightbox(img){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=img.src;
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
