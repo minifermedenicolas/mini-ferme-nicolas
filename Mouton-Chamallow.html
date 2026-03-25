@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bélier - Chamallow</title>
+
+<style>
+
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#fdf8f0;
+color:#333;
+}
+
+header{
+background:#d8cfc4;
+color:#333;
+padding:20px;
+text-align:center;
+}
+
+header h1{
+margin:0;
+font-size:2em;
+}
+
+/* STRUCTURE */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+/* INFOS */
+
+.info-section{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.info-box{
+background:#fff8ec;
+padding:15px;
+border-left:5px solid #d8cfc4;
+border-radius:5px;
+}
+
+.info-section h2{
+color:#a89f94;
+margin-bottom:5px;
+}
+
+/* IMAGES */
+
+.image-section{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+}
+
+.image-section img{
+width:100%;
+border-radius:10px;
+border:3px solid #d8cfc4;
+cursor:pointer;
+transition:transform 0.2s;
+}
+
+.image-section img:hover{
+transform:scale(1.05);
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+display:none;
+position:fixed;
+z-index:1000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+/* TABLETTE & MOBILE */
+
+@media (max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.info-section{
+order:1;
+}
+
+.image-section{
+order:2;
+}
+
+}
+
+@media (max-width:600px){
+
+.image-section{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+font-size:1em;
+}
+
+footer a{
+color:#a89f94;
+text-decoration:none;
+font-weight:bold;
+font-size:1em;
+}
+
+footer a:hover{
+text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Chamallow - Bélier d’Ouessant</h1>
+</header>
+
+<div class="container">
+
+<!-- INFOS -->
+
+<div class="info-section">
+
+<div class="info-box">
+<h2>Informations générales</h2>
+<p>
+Race : Mouton d’Ouessant<br>
+Sexe : Mâle (bélier)<br>
+Né le : 21/02/2026<br>
+Parents : Mouton (père) et Éclipse (mère)<br>
+Famille : Demi-frère de Pralinée
+</p>
+</div>
+
+<div class="info-box">
+<h2>Un petit dernier plein de vie</h2>
+<p>
+Chamallow est le petit dernier de la famille formée par Mouton et Éclipse.  
+Il est donc le demi-frère de Pralinée, avec qui il partage ses origines.
+</p>
+</div>
+
+<div class="info-box">
+<h2>Caractère</h2>
+<p>
+Chamallow est un jeune bélier plein d’énergie, curieux et déjà très débrouillard.  
+Il n’est jamais très loin quand il s’agit de faire une bêtise… surtout quand il est accompagné !
+</p>
+</div>
+
+<div class="info-box">
+<h2>Complicité avec Nutz 😏</h2>
+<p>
+Chamallow est inséparable de Nutz.  
+Entre eux, c’est une vraie histoire : il est clairement sous son charme et tente par tous les moyens de l’impressionner.  
+
+Et quand il s’agit de faire des bêtises… ils sont toujours partants tous les deux !
+</p>
+</div>
+
+<div class="info-box">
+<h2>Les rois de l’évasion 🌸</h2>
+<p>
+Grâce à leur petite taille, Chamallow et Nutz ont trouvé une technique bien à eux :  
+passer sous les fils du parc pour aller goûter aux fleurs… bien plus appétissantes que l’herbe !  
+
+Un talent qui amuse… mais qui fait parfois désespérer le propriétaire des lieux 😄
+</p>
+</div>
+
+<div class="info-box">
+<h2>La petite anecdote 🎬</h2>
+<p>
+À sa naissance, Chamallow avait une petite tête qui faisait penser à une vraie star de cinéma… un Gremlin !  
+
+Espérons simplement qu’il ne se transformera pas s’il se retrouve mouillé 😄
+</p>
+</div>
+
+</div>
+
+<!-- IMAGES -->
+
+<div class="image-section">
+
+<img src="Chamallow-1.jpg" onclick="openLightbox(this)">
+<img src="Chamallow-2.jpg" onclick="openLightbox(this)">
+<img src="Chamallow-3.jpg" onclick="openLightbox(this)">
+<img src="Chamallow-0.jpg" onclick="openLightbox(this)">
+
+</div>
+
+</div>
+
+<!-- LIGHTBOX -->
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
+
+<footer>
+
+<a href="animaux.html">← Retour aux animaux</a> |
+<a href="index.html">← Retour à l'accueil</a> |
+<a href="carte.html">Voir sur la carte 🌍</a>
+
+</footer>
+
+<script>
+
+function openLightbox(img){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=img.src;
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
