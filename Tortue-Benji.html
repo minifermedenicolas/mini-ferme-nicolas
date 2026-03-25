@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tortue d’Hermann - Benji</title>
+
+<style>
+
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#fdf8f0;
+color:#333;
+}
+
+header{
+background:#6c8a2b;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+header h1{
+margin:0;
+font-size:2em;
+}
+
+/* STRUCTURE */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+/* INFOS */
+
+.info-section{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.info-box{
+background:#f4fbe6;
+padding:15px;
+border-left:5px solid #6c8a2b;
+border-radius:5px;
+}
+
+.info-section h2{
+color:#6c8a2b;
+margin-bottom:5px;
+}
+
+/* IMAGES */
+
+.image-section{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+}
+
+.image-section img{
+width:100%;
+border-radius:10px;
+border:3px solid #6c8a2b;
+cursor:pointer;
+transition:transform 0.2s;
+}
+
+.image-section img:hover{
+transform:scale(1.05);
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+display:none;
+position:fixed;
+z-index:1000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.info-section{
+order:1;
+}
+
+.image-section{
+order:2;
+}
+
+}
+
+@media (max-width:600px){
+
+.image-section{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+font-size:1em;
+}
+
+footer a{
+color:#6c8a2b;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer a:hover{
+text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Benji - Tortue d’Hermann</h1>
+</header>
+
+<div class="container">
+
+<!-- INFOS -->
+
+<div class="info-section">
+
+<div class="info-box">
+<h2>Informations générales</h2>
+<p>
+Espèce : Tortue d’Hermann<br>
+Sexe : Indéterminé (trop jeune)<br>
+Né(e) le : 29/03/2025<br>
+Compagnon : Flash
+</p>
+</div>
+
+<div class="info-box">
+<h2>Un jeune début de vie</h2>
+<p>
+Benji est une jeune tortue encore en pleine croissance.  
+À cet âge, il est encore impossible de déterminer s’il s’agit d’un mâle ou d’une femelle, ce qui ajoute un petit mystère autour de sa personnalité.
+</p>
+</div>
+
+<div class="info-box">
+<h2>Vie en duo</h2>
+<p>
+Benji partage son espace avec Flash, son compagnon de toujours.  
+Tous les deux vivent ensemble dans leur parc, où ils passent leur temps à explorer, se reposer au soleil et évoluer à leur rythme.
+</p>
+</div>
+
+<div class="info-box">
+<h2>Un mode de vie tranquille</h2>
+<p>
+Comme toutes les tortues d’Hermann, Benji aime prendre son temps.  
+Entre siestes au soleil et petites promenades, sa vie est rythmée par la tranquillité et la patience.
+</p>
+</div>
+
+<div class="info-box">
+<h2>La petite anecdote 🐢</h2>
+<p>
+Sur certaines photos, Benji apparaît avec Flash et leurs parents.  
+Une belle image de famille qui montre déjà l’importance du groupe, même chez ces animaux discrets.
+</p>
+</div>
+
+</div>
+
+<!-- IMAGES -->
+
+<div class="image-section">
+
+<img src="Tortues-1.jpg" onclick="openLightbox(this)">
+<img src="Tortues-2.jpg" onclick="openLightbox(this)">
+<img src="Tortues-3.jpg" onclick="openLightbox(this)">
+<img src="Tortues-4.jpg" onclick="openLightbox(this)">
+
+</div>
+
+</div>
+
+<!-- LIGHTBOX -->
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
+
+<footer>
+
+<a href="animaux.html">← Retour aux animaux</a> |
+<a href="index.html">← Retour à l'accueil</a> |
+<a href="carte.html">Voir sur la carte 🌍</a>
+
+</footer>
+
+<script>
+
+function openLightbox(img){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=img.src;
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
